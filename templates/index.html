@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Resume Screening</title>
+</head>
+<body>
+    <h1>AI Resume Screening System</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label>Upload Resume (PDF):</label><br>
+        <input type="file" name="resume" required><br><br>
+
+        <label>Job Description:</label><br>
+        <textarea name="job_desc" rows="5" cols="40" required></textarea><br><br>
+
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if score %}
+        <h2>Match Score: {{score}}%</h2>
+    {% endif %}
+</body>
+</html>
