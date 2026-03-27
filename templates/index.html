@@ -2,22 +2,52 @@
 <html>
 <head>
     <title>AI Resume Screening</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f5f5;
+            padding: 40px;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <h1>AI Resume Screening System</h1>
 
-    <form method="POST" enctype="multipart/form-data">
-        <label>Upload Resume (PDF):</label><br>
-        <input type="file" name="resume" required><br><br>
+<div class="box">
+    <h2>AI Resume Screening System</h2>
 
-        <label>Job Description:</label><br>
-        <textarea name="job_desc" rows="5" cols="40" required></textarea><br><br>
+    <form method="POST" action="/analyze">
+
+        <label>Paste Resume Text:</label>
+        <textarea name="resume" rows="6" required></textarea>
+
+        <label>Job Description:</label>
+        <textarea name="job_desc" rows="6" required></textarea>
 
         <button type="submit">Analyze</button>
-    </form>
 
-    {% if score %}
-        <h2>Match Score: {{score}}%</h2>
-    {% endif %}
+    </form>
+</div>
+
 </body>
 </html>

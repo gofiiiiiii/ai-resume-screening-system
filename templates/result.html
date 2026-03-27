@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Result</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f5f5;
+            padding: 40px;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .match {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .green {
+            color: green;
+        }
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Analysis Result</h2>
+
+    <p class="match">Match Score: {{ score }}%</p>
+
+    <h3>Matched Skills</h3>
+    <ul>
+        {% for skill in matched %}
+            <li class="green">✔ {{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Missing Skills</h3>
+    <ul>
+        {% for skill in missing %}
+            <li class="red">✘ {{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="/">🔙 Go Back</a>
+</div>
+
+</body>
+</html>
